@@ -1,0 +1,929 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 1380px;
+}
+
+.margin-section {
+  margin: 80px auto;
+}
+
+.section__title {
+  padding: 20px 0;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}
+
+.section__title--white {
+  padding: 20px 0;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62%;
+  scroll-behavior: smooth;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.nav__burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 15px;
+  font-size: 2.8rem;
+  z-index: 1000;
+  transition: color 0.8s;
+  color: white;
+}
+.nav__burger--black {
+  color: black;
+}
+.nav__items {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 170px 0;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  transform: translateY(-100%);
+  background-color: rgba(171, 171, 171, 0.95);
+  transition: transform 0.8s;
+  z-index: 100;
+}
+.nav__items--active {
+  transform: translateY(0);
+}
+.nav__item {
+  position: relative;
+  display: inline-block;
+  -moz-text-align-last: left;
+       text-align-last: left;
+  padding: 10px 20px;
+  width: 150px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+.nav__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95%;
+  width: 2px;
+  background-color: black;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+.header__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/face-big.jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  animation: headerImgAnimation 10s linear infinite;
+}
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  z-index: 10;
+}
+.header__text {
+  position: absolute;
+  top: 190px;
+  left: 20px;
+  margin-right: 200px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: white;
+  z-index: 10;
+}
+.header__text h1 {
+  font-size: 5rem;
+  margin: 20px 0;
+  transform: translateY(-300%);
+  animation: headerH1Animation 1s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+.header__text h2 {
+  font-size: 3rem;
+  transform: translateX(-300%);
+  animation: headerH2Animation 1s 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+}
+.header__btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+}
+
+@keyframes headerImgAnimation {
+  0% {
+    transform: translateX(2%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(2%);
+  }
+}
+@keyframes headerH1Animation {
+  from {
+    transform: translateY(-300%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes headerH2Animation {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.main-info {
+  height: 30vh;
+  width: 100%;
+}
+.main-info__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-info__box h1 {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+.main-info__box h2 {
+  margin: 20px 50px 20px;
+  text-align: center;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-info__box a {
+  position: relative;
+  margin-top: 80px;
+  font-size: 1.9rem;
+  text-decoration: none;
+  color: black;
+}
+.main-info__box a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.about .review-title {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+}
+.about__reviews {
+  background-color: black;
+  color: white;
+}
+.about__review-box {
+  position: relative;
+  min-height: 20vh;
+  padding: 0 90px 0 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.about__box-img {
+  position: absolute;
+  top: 29%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+.about__box-img img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.about__box-img .img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.5);
+}
+.about .quote-text {
+  font-size: 1.2rem;
+}
+.about .quote-text p {
+  margin: 5px 0 15px 0;
+}
+.about__text {
+  margin: 20px 50px;
+  text-align: center;
+}
+.about__text h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+.about__text p {
+  font-size: 1.5rem;
+}
+.about__text .first {
+  margin-bottom: 5px;
+}
+
+.portfolio {
+  position: relative;
+  min-height: 100vh;
+}
+.portfolio .square {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 5px 0 5px 0;
+  border: 1px solid black;
+}
+.portfolio__line-top {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+.portfolio__line-bottom {
+  position: absolute;
+  bottom: -30px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+.portfolio__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.portfolio .portfolio__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.portfolio .portfolio__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+}
+.portfolio .portfolio__bottom h3 {
+  margin: 15px 0;
+  font-size: 1.4rem;
+}
+.portfolio .portfolio__bottom a {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  border: 1px solid white;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+}
+.portfolio__box-street .portfolio__img {
+  background-image: url("../img/street-small.jpg");
+}
+.portfolio__box-portrait .portfolio__img {
+  background-image: url("../img/portrait-small.jpg");
+}
+.portfolio__box-buisness .portfolio__img {
+  background-image: url("../img/buisness-small.jpg");
+}
+.portfolio .img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.contact__box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact__box .form-line {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 1px;
+  background-color: black;
+}
+.contact__box-info {
+  font-size: 1.5rem;
+  margin: 10px 30px;
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+.contact__box-info .info {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.contact__box-form .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 45px;
+}
+.contact__box-form .form input,
+.contact__box-form .form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.contact__box-form .form label {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+.contact__box-form .form button {
+  border: 1px solid black;
+  padding: 10px 20px;
+  background: none;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.footer {
+  margin-top: 40px;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+}
+.footer__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer__box-social {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.footer__box-social a {
+  text-decoration: none;
+}
+
+@media (min-width: 412px) {
+  .section__title {
+    font-size: 3rem;
+  }
+  .nav .nav__burger {
+    font-size: 3.3rem;
+  }
+  .nav .nav__items {
+    padding: 250px 0;
+  }
+  .nav .nav__item {
+    font-size: 2.5rem;
+  }
+  .header .header__btn {
+    padding: 15px 40px;
+    font-size: 1.9rem;
+  }
+  .header__img {
+    top: 3%;
+    height: 600px;
+  }
+  .header__text h1 {
+    font-size: 6rem;
+  }
+  .header__text h2 {
+    margin-top: 50px;
+  }
+  .main-info__box h1 {
+    font-size: 3rem;
+  }
+  .main-info__box h2 {
+    font-size: 3.2rem;
+  }
+  .main-info__box a {
+    margin-top: 100px;
+    font-size: 2.2rem;
+  }
+  .about .about__box {
+    margin-top: 30px;
+  }
+  .about .about__box .about__text h2 {
+    font-size: 2rem;
+  }
+  .about .about__box .about__text p {
+    font-size: 1.6rem;
+  }
+  .about .about__box .about__text .first {
+    margin-bottom: 15px;
+  }
+  .about .about__box .review-title {
+    font-size: 2.2rem;
+  }
+  .about .about__reviews .quote-box {
+    margin-top: 15px;
+  }
+  .about .about__reviews .quote-text {
+    font-size: 1.6rem;
+  }
+  .portfolio .square {
+    width: 290px;
+    height: 290px;
+  }
+  .portfolio .portfolio__bottom h3 {
+    font-size: 1.8rem;
+  }
+  .portfolio .portfolio__bottom a {
+    top: 40%;
+    left: 75%;
+    font-size: 1.4rem;
+  }
+  .contact .contact__box-info {
+    font-size: 1.8rem;
+  }
+  .footer {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .section__title {
+    font-size: 3.5rem;
+  }
+  .section__title--white {
+    font-size: 3.2rem;
+  }
+  .nav .nav__burger {
+    font-size: 3.8rem;
+  }
+  .nav .nav__items {
+    padding: 270px 0;
+  }
+  .nav .nav__item {
+    font-size: 2.7rem;
+    width: 200px;
+  }
+  .header .header__btn {
+    padding: 20px 60px;
+    font-size: 2.2rem;
+  }
+  .header__img {
+    top: 13%;
+    height: 700px;
+  }
+  .header__text h1 {
+    font-size: 8rem;
+  }
+  .header__text h2 {
+    font-size: 4rem;
+  }
+  .main-info__box h1 {
+    font-size: 3.3rem;
+  }
+  .main-info__box h2 {
+    font-size: 3.7rem;
+  }
+  .main-info__box a {
+    margin-top: 170px;
+    font-size: 2.8rem;
+  }
+  .about .about__box {
+    margin-top: 50px;
+  }
+  .about .about__box .about__text {
+    padding: 0 100px;
+  }
+  .about .about__box .about__text h2 {
+    font-size: 2.5rem;
+  }
+  .about .about__box .about__text p {
+    font-size: 2rem;
+  }
+  .about .about__box .about__text .first {
+    margin-bottom: 25px;
+  }
+  .about .about__box .review-title {
+    font-size: 2.8rem;
+  }
+  .about .about__reviews .quote-box {
+    margin-top: 50px;
+  }
+  .about .about__reviews .quote-text {
+    font-size: 2rem;
+  }
+  .portfolio .portfolio__line-top {
+    right: 50px;
+    width: 250px;
+    height: 250px;
+  }
+  .portfolio .portfolio__line-bottom {
+    bottom: -35px;
+    width: 250px;
+    height: 250px;
+  }
+  .portfolio .square {
+    width: 450px;
+    height: 450px;
+  }
+  .portfolio .portfolio__bottom h3 {
+    font-size: 2rem;
+  }
+  .portfolio .portfolio__bottom a {
+    top: 40%;
+    left: 75%;
+    font-size: 2rem;
+  }
+  .contact .contact__box-info {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+  .contact .contact__box-form {
+    width: 90%;
+  }
+  .contact .contact__box-form .form label {
+    font-size: 2rem;
+  }
+  .contact .contact__box-form .form input {
+    padding: 10px 0;
+  }
+  .contact .contact__box-form .form button {
+    font-size: 1.8rem;
+  }
+  .footer {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section__title {
+    font-size: 3.8rem;
+  }
+  .section__title--white {
+    font-size: 3.6rem;
+  }
+  .nav .nav__burger {
+    display: none;
+  }
+  .nav .nav__items {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 9vh;
+    transform: translateY(0);
+    background-color: rgba(100, 100, 100, 0.9);
+  }
+  .nav .nav__item {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(200, 200, 200, 0.5);
+    text-transform: uppercase;
+  }
+  .nav .nav__item::before {
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(200, 200, 200, 0.5);
+  }
+  .header .header__btn {
+    padding: 30px 80px;
+    font-size: 3.2rem;
+  }
+  .header__img {
+    top: 13%;
+    height: 950px;
+  }
+  .header__text h1 {
+    margin-top: 300px;
+    font-size: 10rem;
+  }
+  .header__text h2 {
+    font-size: 5rem;
+  }
+  .main-info__box h1 {
+    font-size: 3.8rem;
+  }
+  .main-info__box h2 {
+    font-size: 5rem;
+  }
+  .main-info__box a {
+    margin-top: 270px;
+    font-size: 3.5rem;
+  }
+  .about .about__box .about__text h2 {
+    font-size: 3.3rem;
+  }
+  .about .about__box .about__text p {
+    font-size: 2.8rem;
+  }
+  .about .about__box .about__text .first {
+    margin-bottom: 50px;
+  }
+  .about .about__box .review-title {
+    font-size: 3.5rem;
+  }
+  .about .about__reviews .quote-box {
+    margin-top: 50px;
+  }
+  .about .about__reviews .quote-text {
+    font-size: 2.5rem;
+  }
+  .portfolio .portfolio__line-top {
+    top: -40px;
+    right: 50px;
+    width: 400px;
+    height: 400px;
+  }
+  .portfolio .portfolio__line-bottom {
+    bottom: -45px;
+    width: 400px;
+    height: 400px;
+  }
+  .portfolio .square {
+    width: 650px;
+    height: 650px;
+  }
+  .portfolio .portfolio__bottom h3 {
+    font-size: 3rem;
+  }
+  .portfolio .portfolio__bottom a {
+    padding: 10px 40px;
+    font-size: 2.5rem;
+  }
+  .contact .contact__box-info {
+    font-size: 2.9rem;
+    padding: 10px 30px;
+  }
+  .contact .form-line {
+    top: 35%;
+  }
+  .contact .contact__box-form {
+    width: 90%;
+  }
+  .contact .contact__box-form .form label {
+    font-size: 2.8rem;
+  }
+  .contact .contact__box-form .form input {
+    font-size: 1.7rem;
+    padding: 15px 0;
+  }
+  .contact .contact__box-form .form textarea {
+    font-size: 2.3rem;
+  }
+  .contact .contact__box-form .form button {
+    font-size: 2.6rem;
+  }
+  .footer {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section__title {
+    font-size: 2.5rem;
+  }
+  .section__title--white {
+    font-size: 2.5rem;
+  }
+  .nav .nav__items {
+    background-color: black;
+    padding: 0 170px;
+  }
+  .nav .nav__item {
+    font-size: 1.5rem;
+  }
+  .nav .nav__item:hover::before {
+    font-size: 2rem;
+    width: 100%;
+  }
+  .nav .nav__item::before {
+    width: 1px;
+    background-color: rgba(200, 200, 200, 0.5);
+    transition: 0.4s;
+  }
+  .header {
+    height: 100vh;
+  }
+  .header .header__btn {
+    display: none;
+  }
+  .header__img {
+    top: 12%;
+    left: 13%;
+    height: 650px;
+    animation-duration: 40s;
+  }
+  .header__text {
+    display: none;
+  }
+  .main-info {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    width: 40vw;
+    height: 40vw;
+    z-index: 10;
+    background-color: white;
+  }
+  .main-info__box h1 {
+    margin-top: 10%;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  .main-info__box h2 {
+    margin-top: 10%;
+    font-size: 3.3rem;
+    letter-spacing: 2px;
+  }
+  .main-info__box a {
+    margin-top: 50%;
+    font-size: 2.5rem;
+  }
+  .about .about__box {
+    margin: 30px 180px;
+  }
+  .about .about__box .about__text h2 {
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+  }
+  .about .about__box .about__text p {
+    font-size: 2.2rem;
+  }
+  .about .about__box .about__text .first {
+    margin-bottom: 40px;
+  }
+  .about .about__box .review-title {
+    margin-top: 80px;
+    font-size: 3rem;
+  }
+  .about .about__reviews {
+    padding: 30px 40px;
+  }
+  .about .about__reviews .quote-box {
+    margin-top: 50px;
+  }
+  .about .about__reviews .quote-text {
+    font-size: 2rem;
+  }
+  .margin-section {
+    margin: 120px auto;
+  }
+  .portfolio {
+    overflow: hidden;
+    min-height: 70vh;
+  }
+  .portfolio .portfolio__box {
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  .portfolio .portfolio__line-top {
+    top: 0px;
+    right: 0;
+    width: 500px;
+    height: 500px;
+  }
+  .portfolio .portfolio__line-bottom {
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+  }
+  .portfolio .square {
+    margin: 0 10px;
+    width: 400px;
+    height: 400px;
+    transition: transform 0.5s;
+  }
+  .portfolio .square:hover {
+    transform: scale(1.05);
+  }
+  .portfolio .portfolio__bottom h3 {
+    font-size: 2rem;
+  }
+  .portfolio .portfolio__bottom a {
+    right: 10px;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .portfolio .portfolio__bottom a::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: -120px;
+    height: 250%;
+    width: 100px;
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transform: rotate(20deg);
+    transition: 0.4s linear;
+  }
+  .portfolio .portfolio__bottom a:hover::before {
+    left: 100px;
+  }
+  .contact {
+    margin-bottom: 150px;
+  }
+  .contact .contact__box-info {
+    font-size: 2.2rem;
+    padding: 10px 30px;
+  }
+  .contact .form-line {
+    top: 33%;
+  }
+  .contact .contact__box-form {
+    width: 50%;
+  }
+  .contact .contact__box-form .form label {
+    font-size: 2.2rem;
+  }
+  .contact .contact__box-form .form input {
+    font-size: 1.2rem;
+  }
+  .contact .contact__box-form .form textarea {
+    font-size: 1.2rem;
+  }
+  .contact .contact__box-form .form button {
+    position: relative;
+    font-size: 2.2rem;
+    border: 1px solid black;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .footer {
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */
